@@ -11,6 +11,7 @@ body {
     font-size: 16px;
 }
 
+
 header {
   background-color: $primaryColor;
   color: $secondaryColor;
@@ -72,6 +73,22 @@ main {
     color: $primaryColor;
   }
 
+    h2 {
+    font-size: 1.5rem;
+    margin:.75rem 0 0 $gutter;
+    color: lighten($primaryColor, 10%);
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    color: lighten($primaryColor, 20%);
+  }
+
+    p {
+    line-height: 130%;
+    color: $fontColor;
+  }
+
   hr.fadeAway {
  background: linear-gradient(to right, rgba(66,78,100,1) 0%, rgba(66,78,100,0.01) 100%);
     margin: 0 $gutter;
@@ -91,6 +108,11 @@ main {
    figure.photo figcaption {
       color: $primaryColor;
       text-align: center;
+  }
+
+  div.blog article {
+    margin: .5rem $gutter;
+    width: 100% - $gutterdb;
   }
 }
 

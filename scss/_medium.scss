@@ -3,4 +3,11 @@ main {
           float: left;
           width: 50% - $gutterdb;
       }
+
+       div.blog article {
+        float: left;
+        width: 50%-$gutterdb;
+    } // end blog
+
+    div.blog article:nth-child(2n+1) { clear: left;}
 }
