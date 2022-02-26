@@ -1,13 +1,7 @@
-main {
-      figure.photo {
-          float: left;
-          width: 50% - $gutterdb;
-      }
+main.album {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
 
-       div.blog article {
-        float: left;
-        width: 50%-$gutterdb;
-    } // end blog
-
-    div.blog article:nth-child(2n+1) { clear: left;}
+main.artist {
+  grid-template-columns: 1fr 1fr;
 }

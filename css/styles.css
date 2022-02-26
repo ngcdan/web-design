@@ -69,169 +69,166 @@ body {
   font-family: "Lato", sans-serif;
   font-weight: 300;
   font-size: 16px;
+  color: #35373a;
+  background-color: #fff;
+}
+
+div.wrapper {
+  position: relative;
+  height: 100vh;
+  width: 100vh;
 }
 
 header {
-  background-color: #424e64;
-  color: #bbc2ca;
-  padding: 1rem 2%;
-}
-header h1 {
-  font-size: 2rem;
-  font-weight: 300;
-}
-header h2 {
-  font-size: 1.05rem;
-  font-weight: 300;
+  background-color: #553285;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 0.5rem 2%;
 }
 
 nav {
-  background-color: #bbc2ca;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  background-color: #fff;
+  color: #aaa;
+  width: 100vw;
+  border-top: 1px solid #666;
 }
-nav ul li {
-  float: left;
-  width: 25%;
-  border-right: 1px solid rgba(0, 0, 0, 0.3);
+nav div {
+  flex-basis: 25%;
+  text-align: center;
 }
-nav ul li:last-child {
-  border-right: none;
+nav div a {
+  font-size: 1.7rem;
+  display: block;
+  padding: 0.5rem 0;
+  color: #aaa;
 }
-nav ul li a {
+nav div.active {
+  background-color: #553285;
+  color: white;
+}
+
+main.album {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+}
+main.album figure {
+  padding: 0.7rem 2vw;
+}
+main.album figure img {
+  width: 100%;
+}
+main.album figure figcaption {
+  text-align: center;
+  padding: 0.2rem 0;
+}
+
+main.artist {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+}
+main.artist section {
+  margin: 0.75rem 5%;
+  display: grid;
+  grid-template-columns: 80px auto;
+}
+main.artist section img {
+  width: 100%;
+  clip-path: circle(40px at center);
+  -webkit-clip-path: circle(40px at center);
+}
+main.artist section div:nth-child(2) {
+  align-self: center;
+  padding-left: 5%;
+}
+
+main.player {
+  display: grid;
+  grid-template-columns: 50px auto 50px;
+  grid-auto-rows: auto;
+  grid-template-areas: "photo photo photo" "time time time" "startTime empty endTime" "title title title" "prev play next" "dn vol up";
+  margin-top: 1.5rem;
+}
+main.player div.photo {
+  grid-area: photo;
+}
+main.player div.photo img {
+  width: 84%;
+  margin: 0 0 0.5rem 8%;
+  border-radius: 20px;
+}
+main.player div.time {
+  grid-area: time;
+  justify-self: center;
+  width: 84%;
+}
+main.player div.time input {
+  width: 100%;
+}
+main.player div.startTime {
+  grid-area: startTime;
+  text-align: right;
+}
+main.player div.endTime {
+  grid-area: endTime;
+}
+main.player div.title {
+  grid-area: title;
+}
+main.player div.title span {
   display: block;
   text-align: center;
-  text-decoration: none;
-  font-weight: 700;
-  padding: 0.5rem 0;
-  color: #424e64;
-  transition: background 0.75s ease, color 0.75s ease;
 }
-nav ul li.active a {
-  background-color: #909ba8;
-}
-nav ul li a:hover {
-  color: #bbc2ca;
-  background-color: #424e64;
-}
-
-main figure.banner {
-  width: 100%;
-}
-main figure.banner img {
-  width: 100%;
-}
-main h1 {
-  font-size: 2rem;
-  margin: 1rem 0 0 2%;
-  color: #424e64;
-}
-main h2 {
+main.player div.title span:nth-child(1) {
   font-size: 1.5rem;
-  margin: 0.75rem 0 0 2%;
-  color: #566683;
+  padding: 1rem 0 0.3rem 0;
 }
-main h3 {
+main.player div.title span:nth-child(2) {
   font-size: 1.2rem;
-  color: #6d7f9f;
+  padding-bottom: 1rem;
 }
-main p {
-  line-height: 130%;
-  color: #35373a;
+main.player div.previous {
+  grid-area: prev;
+  justify-self: end;
+  font-size: 1.5rem;
 }
-main hr.fadeAway {
-  background: linear-gradient(to right, #424e64 0%, rgba(66, 78, 100, 0.01) 100%);
-  margin: 0 2%;
-  height: 2px;
-  border: none;
+main.player div.play {
+  grid-area: play;
+  justify-self: center;
+  font-size: 1.5rem;
+  padding-bottom: 1rem;
 }
-main figure.photo {
-  width: 96%;
-  margin: 0.5rem 2%;
+main.player div.next {
+  grid-area: next;
+  justify-self: start;
+  font-size: 1.5rem;
 }
-main figure.photo img {
+main.player div.voldn {
+  grid-area: dn;
+  justify-self: center;
+}
+main.player div.volume {
+  grid-area: vol;
+}
+main.player div.volume input {
   width: 100%;
 }
-main figure.photo figcaption {
-  color: #424e64;
-  text-align: center;
-}
-main div.blog article {
-  margin: 0.5rem 2%;
-  width: 96%;
+main.player div.volup {
+  grid-area: up;
+  justify-self: center;
 }
 
-footer {
-  width: 100%;
-  background-color: #424e64;
-}
-footer p {
-  text-align: center;
-  font-size: 0.9rem;
-  color: #bbc2ca;
-  padding: 0.75rem 0;
-}
-footer p a {
-  color: #bbc2ca;
-}
-
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-@media screen and (min-width: 560px) {
-  main figure.photo {
-    float: left;
-    width: 46%;
-  }
-  main div.blog article {
-    float: left;
-    width: 46%;
-  }
-  main div.blog article:nth-child(2n+1) {
-    clear: left;
-  }
-}
-@media screen and (min-width: 1140px) {
-  body {
-    background-image: url(../images/polonez_car.png);
+@media screen and (min-width: 29rem) {
+  main.album {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
-  div#wrapper {
-    max-width: 80rem;
-    margin: 0 auto;
-    box-shadow: 0 0 10px #000000;
-    background-color: #fff;
-  }
-
-  nav ul {
-    margin-left: 2%;
-    border-left: 1px solid rgba(0, 0, 0, 0.3);
-  }
-  nav ul li {
-    width: auto;
-  }
-  nav ul li:last-child {
-    border-right: 1px solid rgba(0, 0, 0, 0.3);
-  }
-  nav ul li a {
-    padding: 0.5rem 1rem;
-  }
-
-  main figure.photo {
-    float: left;
-    width: 21%;
-  }
-  main div.blog article {
-    float: left;
-    width: 29.33%;
-  }
-  main div.blog article:nth-child(2n+1) {
-    clear: none;
-  }
-  main div.blog article:nth-child(3n+1) {
-    clear: left;
+  main.artist {
+    grid-template-columns: 1fr 1fr;
   }
 }
 

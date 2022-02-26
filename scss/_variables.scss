@@ -1,10 +1,22 @@
-$primaryColor: #424e64;
-$secondaryColor: #bbc2ca;
+$primaryColor: #553285;
+$secondaryColor: #36175E;
 $fontColor: #35373a;
 
+$text: $fontColor;
+
+$ltgrey: #aaa;
+$dkgrey: #666;
+
 $primaryFont:'Lato', sans-serif;
-$normalWeight: 300;
-$boldWeight: 700;
+$normal: 300;
+$bold: 700;
 
 $gutter: 2%;
 $gutterdb: (2 * $gutter);
+
+@mixin gradient($start, $end) {
+background: rgb(0,0,0); /* Old browsers */
+background: -moz-linear-gradient(top,  $start, $end 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, $start, $end 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,   $start, $end 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
